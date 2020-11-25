@@ -1,3 +1,4 @@
+//using class to avoid repeating code and enhance the speed
 class Calculator {
     constructor(previousOperandText, currentOperandText) {
         this.currentOperandText = currentOperandText
@@ -84,7 +85,7 @@ class Calculator {
     }
 }
 
-
+//using DOM
 const numberButtons = document.querySelectorAll('[data-number]')
 const operationButtons = document.querySelectorAll('[data-operation]')
 const equalsButton = document.querySelector('[data-equals]')
@@ -95,6 +96,7 @@ const currentOperandTextElement = document.querySelector('[data-current-operand]
 
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
 
+//eventlisteners for every button in calculator
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
         if (calculator.previousOperand === '' && calculator.currentOperand !== null && calculator.readytorestore) {
